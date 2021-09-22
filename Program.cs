@@ -63,15 +63,39 @@ namespace FirstBankOfSuncoast
         // Console.WriteLine("> ");
         // var menuOption = Console.ReadLine().ToUpper();
         var menuOption = PromptForString("> ");   
-        if(menuOption == "W"){}
+        if(menuOption == "W"){
+          //I need to check if the amount is multiple of twenty and if not, ask the user to enter only multiple of 20
+          //I need to check the currentBalance to make sure is greater than the withdraw amount
+          //Substract amount being withdrawn from the current balance
+          //Ask user if he/she would like to print a receipt
+          //Ask user if she /he would like to perform another transaction
+        }
         else
-        if(menuOption == "D"){}
+        if(menuOption == "D"){
+          //All I need to know is the amount and if the amount will be deposited into checkings or savings
+          //Add amount being deposited to current balance
+          //Display a message that says ATM deposits may take 3 business days to be processed
+          //Ask the user if he/she would like to print a receipt
+          //Ask the user if they would like to perform another transaction
+          //If user does not want to perform another transaction, system quits.
+        }
         else
-        if(menuOption == "S"){}
+        if(menuOption == "S"){
+          //Show transactions
+          var transactions = new List<Transaction>();
+          foreach (var transaction in transactions)
+          {
+            Console.WriteLine();
+          }
+        }
         else
-        if(menuOption == "B"){}
+        if(menuOption == "B"){
+          //Displays Balances
+          //Is going to require existing transactions
+        }
         else
         if(menuOption == "Q"){
+          //Quits
           keepGoing = false;
         }
         else{Console.WriteLine("Unknown menu option.");}
