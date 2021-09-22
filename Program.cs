@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Globalization;
 using System.IO;
-using CsvHelper;
-using CsvHelper.Configuration;
+// using CsvHelper;
+// using CsvHelper.Configuration;
 
 namespace FirstBankOfSuncoast
 {
@@ -19,41 +19,39 @@ namespace FirstBankOfSuncoast
       var userInput = Console.ReadLine();
       return userInput;
     }//End of PromptForString
-    static int PromptForInteger(string prompt){
-      var isThisGoodInput = false;
-      do
-      {
-        var stringInput = PromptForString(prompt);
-        int numberInput;
-        isThisGoodInput = Int32.TryParse(stringInput, out numberInput);
-        if(isThisGoodInput){
 
-          return numberInput;
-        }
-        else
-        {
-          Console.WriteLine("That input was not valid.");
-        }
-      };//End do
+    static int PromptForInteger(string prompt){
+      Console.Write(prompt);
+      int numberInput;
+      var isThisGoodInput = Int32.TryParse(Console.ReadLine(), out numberInput);
+      if(isThisGoodInput)
+      {
+        return numberInput;
+      }
+      else
+      {
+        Console.WriteLine("Sorry. Invalid input.");
+        return 0;
+      }
     }//end PromptForInteger      
       
-      //Name ShowGreeting
-      //Input none (void)
-      //Output none (void)
-      //Work A bunch of WriteLines
-      //Access Level Public or Private
-      static void ShowMenu(){
-        Console.WriteLine("Welcome to First Bank of Suncoast.");
-        Console.WriteLine();
-        Console.WriteLine("Choose an option from this menu: ");
-        Console.WriteLine();
-        Console.WriteLine("[W]ithdraw");
-        Console.WriteLine("[D]eposit");
-        Console.WriteLine("[S]ow Transactions");
-        Console.WriteLine("[B]alances");
-        Console.WriteLine("[Q]uit");
-        Console.WriteLine();
-      }
+    //Name ShowGreeting
+    //Input none (void)
+    //Output none (void)
+    //Work A bunch of WriteLines
+    //Access Level Public or Private
+    static void ShowMenu(){
+      Console.WriteLine("Welcome to First Bank of Suncoast.");
+      Console.WriteLine();
+      Console.WriteLine("Choose an option from this menu: ");
+      Console.WriteLine();
+      Console.WriteLine("[W]ithdraw");
+      Console.WriteLine("[D]eposit");
+      Console.WriteLine("[S]ow Transactions");
+      Console.WriteLine("[B]alances");
+      Console.WriteLine("[Q]uit");
+      Console.WriteLine();
+    }
     static void Main(string[] args)
     {
       
