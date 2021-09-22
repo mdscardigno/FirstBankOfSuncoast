@@ -47,15 +47,15 @@ namespace FirstBankOfSuncoast
       Console.WriteLine();
       Console.WriteLine("[W]ithdraw");
       Console.WriteLine("[D]eposit");
-      Console.WriteLine("[S]ow Transactions");
+      Console.WriteLine("[S]how Transactions");
       Console.WriteLine("[B]alances");
       Console.WriteLine("[Q]uit");
       Console.WriteLine();
     }
     static void Main(string[] args)
     {
-      
-
+      var sampleTransaction = new Transaction();
+      Console.WriteLine(sampleTransaction.Description());
       var keepGoing = true;
       while (keepGoing)
       {
