@@ -82,6 +82,7 @@ namespace FirstBankOfSuncoast
         else
         if(menuOption == "S"){
           //Show transactions
+          //empty list of transactions
           var transactions = new List<Transaction>();
           foreach (var transaction in transactions)
           {
