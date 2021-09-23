@@ -54,7 +54,7 @@ namespace FirstBankOfSuncoast
     }
     static void Main(string[] args)
     {
-      var sampleTransaction = new Transaction();
+      var sampleTransaction = new Transaction(){};
       //lets get some d*mmy data 
       //if a user deposits 10 to their savings, 
       //******* STYLE 1******* (my preferred style - step by step)
@@ -64,27 +64,14 @@ namespace FirstBankOfSuncoast
       // tenDollarSavingsDeposit.Account = "Savings"
       
       //*******STYLE 2*******
-       var tenDollarSavingsDeposit = new Transaction(){
-         Amount = 10;
-         Type = "Deposit";
-         Account = "Savings";
-       };
-       transactions.Add(tenDollarSavingsDeposit);//I just made a deposit
-
+      //included the new transaction into the other format above so I am commenting out the line bellow
+      //  var tenDollarSavingsDeposit = transactions.Add(tenDollarSavingsDeposit);//I just made a deposit
       //then withdraws 8 from their savings, 
-      var eightDollarWithdraw = new Transaction(){
-        Amount = 8;
-        Type = "Withdraw";
-        Account = "Savings";
-      };
-      transactions.Add(eightDollarWithdraw); 
+      //included the new transaction into the other format above so I am commenting out the line bellow
+      // var eightDollarWithdraw = transactions.Add(eightDollarWithdraw); 
       //then deposits 25 to their checking, 
-      var twentyFiveDollarDeposit = new Transaction(){
-        Type = "Deposit";
-        Account = "Checking";
-        Amount = 25;
-      };
-      transactions.Add(twentyFiveDollarDeposit);
+      //included the new transaction into the other format above so I am commenting out the line bellow
+      // var twentyFiveDollarDeposit = transactions.Add(twentyFiveDollarDeposit);
       //they have three transactions to consider. 
       //Compute the checking and saving balance
       //using the transaction list, when needed. 
@@ -95,12 +82,26 @@ namespace FirstBankOfSuncoast
 
       var keepGoing = true;
       //empty list of transactions
-      var transactions = new List<Transaction>();
-      foreach (var transaction in transactions)
-      {
-        Console.WriteLine(transactions);
-      }
-
+      var transactions = new List<Transaction>(){
+        new Transaction()
+        {
+        Amount = 10,
+        Type = "Deposit",
+        Account = "Savings"
+        },
+        new Transaction()
+        {
+        Amount = 8,
+        Type = "Withdraw",
+        Account = "Savings"
+        },
+        new Transaction()
+        {
+        Type = "Deposit",
+        Account = "Checking",
+        Amount = 25,
+        }
+      };
       while (keepGoing)
       {
         ShowMenu();
@@ -127,7 +128,12 @@ namespace FirstBankOfSuncoast
         else
         if(menuOption == "S"){
           //Show transactions
-
+          //Print the number of transactions
+          Console.WriteLine($"There are {transactions.Count} transactions");
+          //For each transaction on our transactions list make
+          //-Description of that transaction
+          //-Print the description to the user
+          //-
         }
         else
         if(menuOption == "B"){
