@@ -29,7 +29,10 @@ namespace FirstBankOfSuncoast
         //Work: Make a string of stars then the input then more stars
         //Access: Does the outside world need access this? False.
         private string Bannerize(string message){
-            return "*************************\n" + message + "*************************\n";
+            return 
+            "*************************\n" + 
+            message                       + 
+            "*************************\n";
         }
     }
 }

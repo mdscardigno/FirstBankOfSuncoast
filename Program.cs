@@ -131,9 +131,14 @@ namespace FirstBankOfSuncoast
           //Print the number of transactions
           Console.WriteLine($"There are {transactions.Count} transactions");
           //For each transaction on our transactions list make
+          foreach (var transaction in transactions)
+          {
           //-Description of that transaction
+          var descriptionOfTransaction = transaction.Description();  
+
           //-Print the description to the user
-          //-
+          Console.WriteLine(descriptionOfTransaction);
+          }
         }
         else
         if(menuOption == "B"){
