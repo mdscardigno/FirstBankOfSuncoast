@@ -55,8 +55,52 @@ namespace FirstBankOfSuncoast
     static void Main(string[] args)
     {
       var sampleTransaction = new Transaction();
+      //lets get some d*mmy data 
+      //if a user deposits 10 to their savings, 
+      //******* STYLE 1******* (my preferred style - step by step)
+      // var tenDollarSavingsDeposit = new Transaction();
+      // tenDollarSavingsDeposit.Type = "Deposit";
+      // tenDollarSavingsDeposit.Amount = 10;
+      // tenDollarSavingsDeposit.Account = "Savings"
+      
+      //*******STYLE 2*******
+       var tenDollarSavingsDeposit = new Transaction(){
+         Amount = 10;
+         Type = "Deposit";
+         Account = "Savings";
+       };
+       transactions.Add(tenDollarSavingsDeposit);//I just made a deposit
+
+      //then withdraws 8 from their savings, 
+      var eightDollarWithdraw = new Transaction(){
+        Amount = 8;
+        Type = "Withdraw";
+        Account = "Savings";
+      };
+      transactions.Add(eightDollarWithdraw); 
+      //then deposits 25 to their checking, 
+      var twentyFiveDollarDeposit = new Transaction(){
+        Type = "Deposit";
+        Account = "Checking";
+        Amount = 25;
+      };
+      transactions.Add(twentyFiveDollarDeposit);
+      //they have three transactions to consider. 
+      //Compute the checking and saving balance
+      //using the transaction list, when needed. 
+      //In this case, their savings balance is 
+      //2 and their checking balance is 25.
+
       Console.WriteLine(sampleTransaction.Description());
+
       var keepGoing = true;
+      //empty list of transactions
+      var transactions = new List<Transaction>();
+      foreach (var transaction in transactions)
+      {
+        Console.WriteLine(transactions);
+      }
+
       while (keepGoing)
       {
         ShowMenu();
@@ -65,6 +109,7 @@ namespace FirstBankOfSuncoast
         var menuOption = PromptForString("> ");   
         if(menuOption == "W"){
           //I need to check if the amount is multiple of twenty and if not, ask the user to enter only multiple of 20
+          //
           //I need to check the currentBalance to make sure is greater than the withdraw amount
           //Substract amount being withdrawn from the current balance
           //Ask user if he/she would like to print a receipt
@@ -82,12 +127,7 @@ namespace FirstBankOfSuncoast
         else
         if(menuOption == "S"){
           //Show transactions
-          //empty list of transactions
-          var transactions = new List<Transaction>();
-          foreach (var transaction in transactions)
-          {
-            Console.WriteLine();
-          }
+
         }
         else
         if(menuOption == "B"){
