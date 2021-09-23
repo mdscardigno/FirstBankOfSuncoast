@@ -22,7 +22,7 @@ namespace FirstBankOfSuncoast
             return Bannerize($"{Type} of ${Amount} to {Account}");
         }
         //Behavior 
-        //
+        //Private Method
         //Name: Bannerize (not bruce/hunk but with stars)
         //Input: string
         //Output: string (with stars)
