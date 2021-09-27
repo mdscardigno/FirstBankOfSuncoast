@@ -83,6 +83,7 @@ namespace FirstBankOfSuncoast
       var keepGoing = true;
       //empty list of transactions
       var transactions = new List<Transaction>(){
+        //SAMPLE DATA
         new Transaction()
         {
         Amount = 10,
@@ -142,8 +143,16 @@ namespace FirstBankOfSuncoast
         }
         else
         if(menuOption == "B"){
-          //Displays Balances
+          //Displays Balances of checkingAccount deposits and withdraws
+          //Displays Balances of savingsAccount deposits and withdraws
           //Is going to require existing transactions
+          //
+          //we know that transaction amounts are always POSITIVE
+          //
+          //Total up the checking account deposits totalCheckingDeposits
+          //Total up the checking account withdraws totalCheckingWithdraws
+          //Substract TotalCheckingWithdraws from TotalCheckingDeposits
+          //Substract the checking account withdraws totalCheckingWithdraw
         }
         else
         if(menuOption == "Q"){
@@ -151,6 +160,7 @@ namespace FirstBankOfSuncoast
           keepGoing = false;
         }
         else{Console.WriteLine("Unknown menu option.");}
+        //here is where we will do the csv for "transactions"
     }
 
       // The application should store a history of transactions in a SINGLE List<Transaction>. 
@@ -167,5 +177,9 @@ namespace FirstBankOfSuncoast
       // As a user I should have a menu option to see the balance of my savings and checking.
       // The application should, after each transaction, write all the transactions to a file. This is the same file the application loads.
     }//end of Main
+
+    private int ComputeCheckingBalance(List<Transaction> transactions){
+      var totalCheckingDeposits = transactions.Where(transaction => transaction.Account == "Checking" && transaction.Type == "Deposit").Sum(transaction => transaction.Amount);
+    }
   }//end of program
 }//end of namespace

@@ -30,9 +30,10 @@ namespace FirstBankOfSuncoast
         //Access: Does the outside world need access this? False.
         private string Bannerize(string message){
             return 
-            "*************************\n" + 
-            message                       + 
-            "*************************\n";
+            "***************************\n" + 
+            message                       +
+                                     "\n" + 
+            "***************************\n";
         }
     }
 }
